@@ -1,5 +1,8 @@
+import React, { Component } from "react";
 import { FeedbackOptions } from "./FeedbackOptions/Feedback";
 import { Statistics } from "./Statistics/Statistics";
+import { Section } from "./Section/Section";
+import { Notification } from "./Notification/Notification";
 
 export class App extends Component {
   state = {
@@ -34,12 +37,14 @@ export class App extends Component {
     return (
       <div
         style={{
-          // height: '100vh',
-          display: 'flex',
+          marginLeft: '30px',
+          height: '100vh',
+          display: 'block',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 20,
-          color: '#010101'
+        
+          // fontSize: 20,
+          // color: '#010101'
         }}
       >
         <Section title="Please leave feedback">
@@ -62,10 +67,6 @@ export class App extends Component {
             <Notification message="There is no feedback"></Notification>
           )}
         </Section>
-      
-      
-      
-        <Feedback />
       </div>
     );
   }
