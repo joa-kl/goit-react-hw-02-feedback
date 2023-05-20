@@ -36,16 +36,15 @@ export class App extends Component {
   render() {
     return (
       <div
-        style={{
-          marginLeft: '30px',
-          height: '100vh',
-          display: 'block',
-          justifyContent: 'center',
-          alignItems: 'center',
+        // style={{
+        //   marginLeft: '30px',
+        //   height: '100vh',
+        //   display: 'block',
+        //   justifyContent: 'center',
+        //   alignItems: 'center',
         
-          // fontSize: 20,
-          // color: '#010101'
-        }}
+
+        // }}
       >
         <Section title="Please leave feedback">
           <FeedbackOptions
