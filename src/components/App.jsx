@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FeedbackOptions } from "./FeedbackOptions/Feedback";
+import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Statistics } from "./Statistics/Statistics";
 import { Section } from "./Section/Section";
 import { Notification } from "./Notification/Notification";
@@ -11,7 +11,23 @@ export class App extends Component {
     bad: 0,
   };
 
+  // handleFeedback = e => {
+  //   if (e === 'Good') {
+  //     this.setState({ good: this.state.good + 1 });
+  //   } else if (e === 'Neutral') {
+  //     this.setState({ neutral: this.state.neutral + 1 });
+  //   } else if (e === 'Bad') {
+  //     this.setState({ bad: this.state.bad + 1 });
+  //   }
+  // };
   handleFeedback = e => {
+    // const { type } = this.state;
+
+    // this.setState(prevState => ({
+    //   [type]: prevState[type] + 1
+    // }));
+    // console.log(this.state.good);
+    // this.setState({ good: this.state.good + 1 });
     if (e === 'Good') {
       this.setState({ good: this.state.good + 1 });
     } else if (e === 'Neutral') {
