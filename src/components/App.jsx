@@ -20,7 +20,10 @@ export class App extends Component {
   //     this.setState({ bad: this.state.bad + 1 });
   //   }
   // };
-  handleFeedback= e => {
+  handleFeedback = type => {
+    //  const { name, value } = e.target;
+    this.setState(prevState => ({ [type]: prevState[type] + 1 }));
+
     // const { type } = this.state;
 
     // this.setState(prevState => ({
@@ -28,13 +31,13 @@ export class App extends Component {
     // }));
     // console.log(this.state.good);
     // this.setState({ good: this.state.good + 1 });
-    if (e === 'Good') {
-      this.setState({ good: this.state.good + 1 });
-    } else if (e === 'Neutral') {
-      this.setState({ neutral: this.state.neutral + 1 });
-    } else if (e === 'Bad') {
-      this.setState({ bad: this.state.bad + 1 });
-    }
+    // if (e === 'Good') {
+    //   this.setState({ good: this.state.good + 1 });
+    // } else if (e === 'Neutral') {
+    //   this.setState({ neutral: this.state.neutral + 1 });
+    // } else if (e === 'Bad') {
+    //   this.setState({ bad: this.state.bad + 1 });
+    // }
   };
 
 countTotalFeedback = () => {
@@ -46,9 +49,9 @@ countTotalFeedback = () => {
   };
 
   countPositiveFeedbackPercentage = () => {
-    if (this.countTotalFeedback() === 0) {
-      return 0;
-    }
+    // if (this.countTotalFeedback() === 0) {
+    //   return 0;
+    // }
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
@@ -68,8 +71,8 @@ countTotalFeedback = () => {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['Good', 'Neutral', 'Bad']}
-            onLeaveFeedback={this.handleFeedback.bind(this)}
-          />{' '}
+            onLeaveFeedback={this.handleFeedback}
+          />
         </Section>
 
         <Section title="Statistics">
